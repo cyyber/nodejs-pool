@@ -2,6 +2,8 @@
   "pool_id": 0,
   "bind_ip": "127.0.0.1",
   "hostname": "testpool.com",
+  "leafapi_port": 8000,
+  "api_port": 8001,
   "db_storage_path": "CHANGEME",
   "db_storage_max_size": 24,
   "coin": "itns",
