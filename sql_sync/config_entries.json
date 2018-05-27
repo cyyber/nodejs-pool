@@ -614,5 +614,13 @@
     "item_value": "50",
     "item_type": "int",
     "Item_desc": "The maximum simultaneous connections a single miner (payout address) is allowed to a given pool daemon."
+  },
+  {
+    "id": 83,
+    "module": "pool",
+    "item": "templateRefreshTime",
+    "item_value": "60",
+    "item_type": "int",
+    "Item_desc": "If the current active block template exceeds this age in seconds, a new template will be requested. If targetTime is below or too close to this value, pool side reported hashrates will be incredibly inaccurate."
   }
 ]
