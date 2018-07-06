@@ -39,3 +39,9 @@ ALTER TABLE pool.users ADD enable_email BOOL DEFAULT true NULL;
 ```sql
 ALTER TABLE pool.block_log ADD INDEX `diff` (`find_time`, `difficulty`);
 ```
+
+7/6/2018
+--------
+```sql
+ALTER TABLE pool.balance ADD last_mine timestamp DEFAULT 0 AFTER last_edited;
+```
