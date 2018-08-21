@@ -45,5 +45,14 @@
     "name": "Intense Coin",
     "mixIn": 4,
     "shortCode": "ITNS"
+  },
+  "lthn": {
+    "funcFile": "./lib/coins/lthn.js",
+    "paymentFile": "./payment_systems/lthn.js",
+    "sigDigits": 100000000,
+    "blockTargetTime": 120,
+    "name": "Lethean",
+    "mixIn": 4,
+    "shortCode": "LTNS"
   }
 }
