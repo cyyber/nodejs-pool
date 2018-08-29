@@ -16,9 +16,9 @@ AEON | Aeon | aeon | :white_check_mark: | :white_check_mark:
 KRB | Karbowanec | krb | :white_check_mark: | :x:
 
 # Reference Installation
-[https://ITNSpool.net](https://itnspool.net) is the reference pool that utilizes this repository.  Take a look at the pool for a production example of this codebase.
+[https://lethean.blockharbor.net](https://lethean.blockharbor.net) is the reference pool that utilizes this repository.  Take a look at the pool for a production example of this codebase.
 
-While the UI in use by ITNSPool is a custom fork of [miziel's poolui](https://github.com/miziel/poolui), the [original poolui](https://github.com/mesh0000/poolui) will work with this nodejs-pool fork out of the box.  Any other forks of poolui will likely work, too.
+While the UI in use by BlockHarbor.net is a custom fork of [miziel's poolui](https://github.com/miziel/poolui), the [original poolui](https://github.com/mesh0000/poolui) will work with this nodejs-pool fork out of the box.  Any other forks of poolui will likely work, too.
 
 # Pool Design/Theory
 The nodejs-pool is built around a small series of core daemons that share access to a single LMDB table for tracking of shares, with MySQL being used to centralize configurations and ensure simple access from local/remote nodes.  The core daemons follow:
@@ -57,7 +57,7 @@ Single Server | caddy, crypto-daemon, crypto-wallet, mysql, lmdb, api, remoteSha
 * Frontend load is susceptible to causing backend performance issues, and vice versa
 
 ### Main Server w/Additional Pool Nodes
-This is what [ITNSpool.net](https://itnspool.net) currently utilizes, as a compromise in offering geographically convenient servers for miners to use while keeping costs lower than they have to be.  This setup is the minimum barrier to provide two pool servers that miners can use.
+This is what [lethean.blockharbor.net](https://lethean.blockharbor.net) currently utilizes, as a compromise in offering geographically convenient servers for miners to use while keeping costs lower than they have to be.  This setup is the minimum barrier to provide two pool servers that miners can use.
 
 Server | Services
 ------ | --------
@@ -91,7 +91,7 @@ The simplest and most straight forward option is to use the included steps to se
 
 Sample Caddyfile for API:
 ```text
-https://api.itnspool.net {
+https://api.lethean.blockharbor.net {
     proxy /leafApi 127.0.0.1:8000
     proxy / 127.0.0.1:8001
     cors
@@ -215,7 +215,7 @@ general/emailFrom
 SQL import command: sudo mysql pool < ~/nodejs-pool/sample_config.sql (Adjust name/path as needed!)
 ```
 
-The shareHost configuration is designed to be pointed at wherever the leafApi endpoint exists.  For ITNSpool.net, we use https://itnspool.net/leafApi.  If you're using the automated setup script, you can use: `http://<your IP>/leafApi`, as Caddy will proxy it.  If you're just using localhost and a local pool serv, http://127.0.0.1:8000/leafApi will do you quite nicely
+The shareHost configuration is designed to be pointed at wherever the leafApi endpoint exists.  For lethean.blockharbor.net, we use https://lethean.blockharbor.net/leafApi.  If you're using the automated setup script, you can use: `http://<your IP>/leafApi`, as Caddy will proxy it.  If you're just using localhost and a local pool serv, http://127.0.0.1:8000/leafApi will do you quite nicely
 
 Additional ports can be added as desired, samples can be found at the end of base.sql.  If you're not comfortable with the MySQL command line, I highly suggest MySQL Workbench or a similar piece of software (I use datagrip!).  Your root MySQL password can be found in `/root/.my.cnf`
 
@@ -331,7 +331,7 @@ If you'd like to make a one time donation, the addresses are as follows:
 Coin | Donation Address
 ---- | ----------------
 XMR  | 46BvkmZwu5bdPrfHguduUNe43MX9By6vsEAPASdkxjvWfXsoPcJbEXWi1LFm7Vroo2XLDThDzwtqRRehWSeSYhGoCLzg1tY
-ITNS | iz5imhe9C7vWnjZtZBFtT8MwNxVuJuryUUHXSAtnWUo93CJzNdZBizHQExPRCHUBi36tk2BcigPAFRDA4cnddGXF1R6j69n3w
+LTHN | iz5imhe9C7vWnjZtZBFtT8MwNxVuJuryUUHXSAtnWUo93CJzNdZBizHQExPRCHUBi36tk2BcigPAFRDA4cnddGXF1R6j69n3w
 
 **Snipa22** - Maintainer/Developer of the original nodejs-pool
 
