@@ -8,6 +8,7 @@ Other coins will likely be supported, although not prioritized or as thoroughly 
 # Supported Coins
 Coin | Name | Coin File | Supported | Tested
 ---- | ---- | --------- | --------- | ------
+LTHN | Lethean | lthn | :white_check_mark: | :white_check_mark:
 ITNS | ITNS (1.44+) | itns | :white_check_mark: | :white_check_mark:
 ITNS | ITNS (up to 1.4.2) | itns142 | :white_check_mark: | :white_check_mark:
 XMR | Monero | xmr | :white_check_mark: | :white_check_mark:
