@@ -1,0 +1,13 @@
+[Unit]
+Description=Lethean Daemon
+After=network.target
+
+[Service]
+Type=forking
+GuessMainPID=no
+ExecStart=/usr/local/src/lethean/build/release/bin/letheand --rpc-bind-ip 127.0.0.1 --detach --restricted-rpc
+Restart=always
+User=letheandaemon
+
+[Install]
+WantedBy=multi-user.target

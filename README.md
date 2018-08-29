@@ -1,5 +1,5 @@
 # nodejs-pool
-This repository is a fork of [Snipa22](https://github.com/Snipa22)'s [nodejs-pool](https://github.com/Snipa22/nodejs-pool) which is maintained by [Venthos](https://github.com/Venthos).  This repository will most closely follow the needs and requests of the [Intense Coin](https://intensecoin.com) community, as that is the coin this was originally forked to accommodate.
+This repository is a fork of [Snipa22](https://github.com/Snipa22)'s [nodejs-pool](https://github.com/Snipa22/nodejs-pool) which is maintained by [Venthos](https://github.com/Venthos).  This repository will most closely follow the needs and requests of the [Lethean](https://lethean.io) community, as that is the coin this was originally forked to accommodate.
 
 However, this fork contains fixes and features that would be useful to any cryptonight/cryptonight-lite coin pool operator.
 
@@ -35,8 +35,8 @@ worker | N/A | Does regular processing of statistics and sends status e-mails fo
 # Pool Layout
 nodejs-pool scales from being able to operate on a single server to being able to utilize multiple servers.  A few common setups are listed below, which use a few additional service terms:
 
-* **crypto-daemon** - your choice of coins blockchain daemon *(intensecoind, monerod, etc.)*
-* **crypto-wallet** - your choice of coin's wallet daemon that provides JSON RPC *(intense-wallet-rpc, monero-wallet-rpc, walletd)*
+* **crypto-daemon** - your choice of coins blockchain daemon *(letheancoind, monerod, etc.)*
+* **crypto-wallet** - your choice of coin's wallet daemon that provides JSON RPC *(lethean-wallet-rpc, monero-wallet-rpc, walletd)*
 * **caddy** - your choice in web server, the default of which is "caddy"
 * **mysql** - MySQL, MariaDB, or other MySQL drop-in replacements should work fine.
 * **lmdb** - Not an actual daemon, but signifies where the singular LMDB database lives
@@ -145,7 +145,7 @@ The below should be considered bare minimum requirements for a pool that is just
 ### Deployment via Installer
 
 1. Add your user to `/etc/sudoers`, this must be done so the script can sudo up and do it's job.  We suggest passwordless sudo.  Suggested line: `<USER> ALL=(ALL) NOPASSWD:ALL`.  Our sample builds use: `pooldaemon ALL=(ALL) NOPASSWD:ALL`
-2. Run the [deploy script](https://raw.githubusercontent.com/Venthos/nodejs-pool/master/deployment/deploy.bash) as a **NON-ROOT USER**.  This is very important!  This script will install the pool to whatever user it's running under!  Also.  Go get a coffee, this sucker bootstraps the intensecoin installation.
+2. Run the [deploy script](https://raw.githubusercontent.com/Venthos/nodejs-pool/master/deployment/deploy.bash) as a **NON-ROOT USER**.  This is very important!  This script will install the pool to whatever user it's running under!  Also.  Go get a coffee, this sucker bootstraps the lethean installation.
 3. Once it's complete, change as `config.json` appropriate.  It is pre-loaded for a local install of everything, running on 127.0.0.1.  This will work perfectly fine if you're using a single node setup.  You'll also want to set `bind_ip` to the external IP of the pool server, and `hostname` to the resolvable hostname for the pool server. `pool_id` is mostly used for multi-server installations to provide unique identifiers in the backend. You will also want to run: source ~/.bashrc  This will activate NVM and get things working for the following pm2 steps.
 4. You'll need to change the API endpoint for the frontend code in the `poolui/build/globals.js` and `poolui/build/globals.default.js` -- This will usually be `http(s)://<your server FQDN>/api` unless you tweak caddy!
 5. The default database directory `/home/<username>/pool_db/` is already been created during startup. If you change the `db_storage_path` just make sure your user has write permissions for new path. Run: `pm2 restart api` to reload the API for usage.
@@ -183,16 +183,16 @@ The following raw binaries **MUST BE AVAILABLE FOR IT TO BOOTSTRAP**:
 
 I've confirmed that the default server 16.04 installation has these requirements.
 
-The pool comes pre-configured with values for Intense Coin (ITNS), these may need to be changed depending on the exact requirements of your coin.  Other coins will likely be added down the road, and most likely will have configuration.sqls provided to overwrite the base configurations for their needs, but can be configured within the frontend as well.
+The pool comes pre-configured with values for Lethean (LTHN), these may need to be changed depending on the exact requirements of your coin.  Other coins will likely be added down the road, and most likely will have configuration.sqls provided to overwrite the base configurations for their needs, but can be configured within the frontend as well.
 
 ### Wallet Setup
 The pool is designed to have a dual-wallet design, one which is a fee wallet, one which is the live pool wallet.  The fee wallet is the default target for all fees owed to the pool owner.  PM2 can also manage your wallet daemon, and that is the suggested run state.
 
-1. Generate your wallets using `/usr/local/src/intensecoin/build/release/bin/intense-wallet-cli`
+1. Generate your wallets using `/usr/local/src/lethean/build/release/bin/lethean-wallet-cli`
 2. Make sure to save your regeneration stuff!
 3. For the pool wallet, store the password in a file, the suggestion is `~/wallet_pass`
 4. Change the mode of the file with chmod to 0400: `chmod 0400 ~/wallet_pass`
-5. Start the wallet using PM2: `pm2 start /usr/local/src/intensecoin/build/release/bin/intense-wallet-rpc -- --rpc-bind-port 48783 --password-file ~/wallet_pass --wallet-file <Your wallet name here> --disable-rpc-login --trusted-daemon`
+5. Start the wallet using PM2: `pm2 start /usr/local/src/lethean/build/release/bin/lethean-wallet-rpc -- --rpc-bind-port 48783 --password-file ~/wallet_pass --wallet-file <Your wallet name here> --disable-rpc-login --trusted-daemon`
 6. If you don't use PM2, then throw the wallet into a screen and have fun.
 
 ### Manual Setup
