@@ -43,5 +43,5 @@ ALTER TABLE pool.block_log ADD INDEX `diff` (`find_time`, `difficulty`);
 7/6/2018
 --------
 ```sql
-ALTER TABLE pool.balance ADD last_mine timestamp DEFAULT 0 AFTER last_edited;
+ALTER TABLE pool.balance ADD last_mine timestamp NULL DEFAULT NULL AFTER last_edited;
 ```
