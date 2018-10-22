@@ -49,7 +49,7 @@
   },
   "optionalDependencies": {
     "cryptonote-util": "git://github.com/Snipa22/node-cryptonote-util.git#xmr-Nan-2.0",
-    "intensecoin-util": "git://github.com/valiant1x/node-cryptonote-util.git#xmr-Nan-2.0",
+    "intensecoin-util": "git://github.com/LetheanMovement/node-cryptonote-util.git#xmr-Nan-2.0",
     "forknote-util": "git://github.com/wallet42/node-forknote-util.git",
     "cryptonight-hashing": "git://github.com/Venthos/node-cryptonight-hashing.git"
   }
