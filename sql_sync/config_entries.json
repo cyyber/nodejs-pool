@@ -109,15 +109,15 @@
     "item": "address",
     "item_value": "127.0.0.1",
     "item_type": "string",
-    "Item_desc": "Monero Daemon RPC IP"
+    "Item_desc": "LTHN Daemon RPC IP"
   },
   {
     "id": 16,
     "module": "daemon",
     "item": "port",
-    "item_value": "18081",
+    "item_value": "48782",
     "item_type": "int",
-    "Item_desc": "Monero Daemon RPC Port"
+    "Item_desc": "Lethean Daemon RPC Port"
   },
   {
     "id": 17,
@@ -125,15 +125,15 @@
     "item": "address",
     "item_value": "127.0.0.1",
     "item_type": "string",
-    "Item_desc": "Monero Daemon RPC Wallet IP"
+    "Item_desc": "Lethean Daemon RPC Wallet IP"
   },
   {
     "id": 18,
     "module": "wallet",
     "item": "port",
-    "item_value": "37458",
+    "item_value": "48783",
     "item_type": "int",
-    "Item_desc": "Monero Daemon RPC Wallet Port"
+    "Item_desc": "Lethean Daemon RPC Wallet Port"
   },
   {
     "id": 21,
@@ -195,7 +195,7 @@
     "id": 29,
     "module": "payout",
     "item": "pplnsFee",
-    "item_value": ".6",
+    "item_value": ".5",
     "item_type": "float",
     "Item_desc": "Fee charged for the usage of the PPLNS pool"
   },
@@ -219,31 +219,31 @@
     "id": 32,
     "module": "payout",
     "item": "exchangeMin",
-    "item_value": "5",
+    "item_value": "25",
     "item_type": "float",
-    "Item_desc": "Minimum XMR balance for payout to exchange/payment ID"
+    "Item_desc": "Minimum LTHN balance for payout to exchange/payment ID"
   },
   {
     "id": 33,
     "module": "payout",
     "item": "walletMin",
-    "item_value": ".3",
+    "item_value": "5",
     "item_type": "float",
-    "Item_desc": "Minimum XMR balance for payout to personal wallet"
+    "Item_desc": "Minimum LTHN balance for payout to personal wallet"
   },
   {
     "id": 34,
     "module": "payout",
     "item": "devDonation",
-    "item_value": "5",
+    "item_value": ".1",
     "item_type": "float",
-    "Item_desc": "Donation to XMR core development"
+    "Item_desc": "Donation to LTHN core development"
   },
   {
     "id": 35,
     "module": "payout",
     "item": "poolDevDonation",
-    "item_value": "0",
+    "item_value": ".1",
     "item_type": "float",
     "Item_desc": "Donation to pool developer"
   },
@@ -251,7 +251,7 @@
     "id": 36,
     "module": "payout",
     "item": "denom",
-    "item_value": ".000001",
+    "item_value": ".0001",
     "item_type": "float",
     "Item_desc": "Minimum balance that will be paid out to."
   },
@@ -267,7 +267,7 @@
     "id": 38,
     "module": "general",
     "item": "sigDivisor",
-    "item_value": "1000000000000",
+    "item_value": "100000000",
     "item_type": "int",
     "Item_desc": "Divisor for turning coin into human readable amounts "
   },
@@ -285,15 +285,15 @@
     "item": "feesForTXN",
     "item_value": "10",
     "item_type": "int",
-    "Item_desc": "Amount of XMR that is left from the fees to pay miner fees."
+    "Item_desc": "Amount of LTHN that is left from the fees to pay miner fees."
   },
   {
     "id": 41,
     "module": "payout",
     "item": "maxTxnValue",
-    "item_value": "250",
+    "item_value": "2500",
     "item_type": "int",
-    "Item_desc": "Maximum amount of XMR to send in a single transaction"
+    "Item_desc": "Maximum amount of LTHN to send in a single transaction"
   },
   {
     "id": 42,
@@ -307,7 +307,7 @@
     "id": 43,
     "module": "general",
     "item": "coinCode",
-    "item_value": "XMR",
+    "item_value": "LTHN",
     "item_type": "string",
     "Item_desc": "Coincode to be loaded up w/ the shapeshift getcoins argument."
   },
@@ -315,7 +315,7 @@
     "id": 44,
     "module": "general",
     "item": "allowBitcoin",
-    "item_value": "true",
+    "item_value": "false",
     "item_type": "bool",
     "Item_desc": "Allow the pool to auto-payout to BTC via ShapeShift"
   },
@@ -435,7 +435,7 @@
     "id": 59,
     "module": "payout",
     "item": "feeSlewAmount",
-    "item_value": ".011",
+    "item_value": ".1",
     "item_type": "float",
     "Item_desc": "Amount to charge for the txn fee"
   },
@@ -443,7 +443,7 @@
     "id": 60,
     "module": "payout",
     "item": "feeSlewEnd",
-    "item_value": "4",
+    "item_value": "250",
     "item_type": "float",
     "Item_desc": "Value at which txn fee amount drops to 0"
   },
@@ -467,7 +467,7 @@
     "id": 63,
     "module": "solo",
     "item": "enable",
-    "item_value": "true",
+    "item_value": "false",
     "item_type": "bool",
     "Item_desc": "Enable SOLO mining on the pool"
   },
@@ -499,7 +499,7 @@
     "id": 67,
     "module": "payout",
     "item": "maxPaymentTxns",
-    "item_value": "5",
+    "item_value": "25",
     "item_type": "int",
     "Item_desc": "Maximum number of transactions in a single payment"
   },
@@ -555,7 +555,7 @@
     "id": 75,
     "module": "payout",
     "item": "priority",
-    "item_value": "0",
+    "item_value": "1",
     "item_type": "int",
     "Item_desc": "Payout priority setting. 0 = use default (4x fee); 1 = low prio (1x fee)"
   },
@@ -563,7 +563,7 @@
     "id": 76,
     "module": "payout",
     "item": "fee",
-    "item_value": "10000000000",
+    "item_value": "10000000",
     "item_type": "int",
     "Item_desc": "Atomic units of coin to use ass a fee"
   },

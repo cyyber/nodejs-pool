@@ -36,7 +36,7 @@ worker | N/A | Does regular processing of statistics and sends status e-mails fo
 # Pool Layout
 nodejs-pool scales from being able to operate on a single server to being able to utilize multiple servers.  A few common setups are listed below, which use a few additional service terms:
 
-* **crypto-daemon** - your choice of coins blockchain daemon *(letheancoind, monerod, etc.)*
+* **crypto-daemon** - your choice of coins blockchain daemon *(letheand, monerod, etc.)*
 * **crypto-wallet** - your choice of coin's wallet daemon that provides JSON RPC *(lethean-wallet-rpc, monero-wallet-rpc, walletd)*
 * **caddy** - your choice in web server, the default of which is "caddy"
 * **mysql** - MySQL, MariaDB, or other MySQL drop-in replacements should work fine.
