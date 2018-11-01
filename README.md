@@ -9,8 +9,6 @@ Other coins will likely be supported, although not prioritized or as thoroughly 
 Coin | Name | Coin File | Supported | Tested
 ---- | ---- | --------- | --------- | ------
 LTHN | Lethean | lthn | :white_check_mark: | :white_check_mark:
-ITNS | ITNS (1.44+) | itns | :white_check_mark: | :white_check_mark:
-ITNS | ITNS (up to 1.4.2) | itns142 | :white_check_mark: | :white_check_mark:
 XMR | Monero | xmr | :white_check_mark: | :white_check_mark:
 AEON | Aeon | aeon | :white_check_mark: | :white_check_mark:
 KRB | Karbowanec | krb | :white_check_mark: | :x:
