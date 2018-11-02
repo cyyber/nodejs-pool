@@ -195,8 +195,8 @@ INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES 
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'soloFee', '.4', 'float', 'Fee charged for usage of the solo mining pool');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'exchangeMin', '25', 'float', 'Minimum LTHN balance for payout to exchange/payment ID');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'walletMin', '5', 'float', 'Minimum LTHN balance for payout to personal wallet');
-INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'devDonation', '.1', 'float', 'Donation to LTHN core development');
-INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'poolDevDonation', '.1', 'float', 'Donation to pool developer');
+INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'devDonation', '10', 'float', 'Donation to LTHN core development');
+INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'poolDevDonation', '10', 'float', 'Donation to pool developer');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'denom', '.0001', 'float', 'Minimum balance that will be paid out to.');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('payout', 'blocksRequired', '60', 'int', 'Blocks required to validate a payout before it''s performed.');
 INSERT INTO pool.config (module, item, item_value, item_type, Item_desc) VALUES ('general', 'sigDivisor', '100000000', 'int', 'Divisor for turning coin into human readable amounts ');
