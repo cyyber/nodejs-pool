@@ -10,24 +10,6 @@
     "mixIn": 6,
     "shortCode": "XMR"
   },
-  "krb": {
-    "funcFile": "./lib/coins/krb.js",
-    "paymentFile": "./payment_systems/krb.js",
-    "sigDigits": 1000000000000,
-    "blockTargetTime": 240,
-    "name": "Karbowanec",
-    "mixIn": 4,
-    "shortCode": "KRB"
-  },
-  "aeon": {
-    "funcFile": "./lib/coins/aeon.js",
-    "paymentFile": "./payment_systems/aeon.js",
-    "sigDigits": 1000000000000,
-    "blockTargetTime": 240,
-    "name": "Aeon Coin",
-    "mixIn": 4,
-    "shortCode": "AEON"
-  },
   "lthn": {
     "funcFile": "./lib/coins/lthn.js",
     "paymentFile": "./payment_systems/lthn.js",

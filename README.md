@@ -10,8 +10,6 @@ Coin | Name | Coin File | Supported | Tested
 ---- | ---- | --------- | --------- | ------
 LTHN | Lethean | lthn | :white_check_mark: | :white_check_mark:
 XMR | Monero | xmr | :white_check_mark: | :white_check_mark:
-AEON | Aeon | aeon | :white_check_mark: | :white_check_mark:
-KRB | Karbowanec | krb | :white_check_mark: | :x:
 
 # Reference Installation
 [https://lethean.blockharbor.net](https://lethean.blockharbor.net) is the reference pool that utilizes this repository.  Take a look at the pool for a production example of this codebase.
@@ -330,16 +328,6 @@ Coin | Donation Address
 ---- | ----------------
 XMR  | 46BvkmZwu5bdPrfHguduUNe43MX9By6vsEAPASdkxjvWfXsoPcJbEXWi1LFm7Vroo2XLDThDzwtqRRehWSeSYhGoCLzg1tY
 LTHN | iz5imhe9C7vWnjZtZBFtT8MwNxVuJuryUUHXSAtnWUo93CJzNdZBizHQExPRCHUBi36tk2BcigPAFRDA4cnddGXF1R6j69n3w
-
-**Snipa22** - Maintainer/Developer of the original nodejs-pool
-
-Coin | Donation Address
----- | ----------------
-XMR  | 44Ldv5GQQhP7K7t3ZBdZjkPA7Kg7dhHwk3ZM3RJqxxrecENSFx27Vq14NAMAd2HBvwEPUVVvydPRLcC69JCZDHLT2X5a4gr
-BTC  | 114DGE2jmPb5CP2RGKZn6u6xtccHhZGFmM
-AEON | WmtvM6SoYya4qzkoPB4wX7FACWcXyFPWAYzfz7CADECgKyBemAeb3dVb3QomHjRWwGS3VYzMJAnBXfUx5CfGLFZd1U7ssdXTu
-
-*Coins implemented by this fork carry a poolDevAddress set to Venthos, those originally implemented by Snipa22 (XMR, AEON) carry a poolDevAddress pointed to him.*
 
 # Credits
 
