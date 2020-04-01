@@ -18,5 +18,14 @@
     "name": "Lethean",
     "mixIn": 4,
     "shortCode": "LTHN"
+  },
+  "qrl": {
+    "funcFile": "./lib/coins/qrl.js",
+    "paymentFile": "./payment_systems/qrl.js",
+    "sigDigits": 1000000000,
+    "blockTargetTime": 60,
+    "name": "Quantum Resistant Ledger",
+    "mixIn": 100,
+    "shortCode": "QRL"
   }
 }

@@ -109,15 +109,15 @@
     "item": "address",
     "item_value": "127.0.0.1",
     "item_type": "string",
-    "Item_desc": "LTHN Daemon RPC IP"
+    "Item_desc": "QRL Daemon RPC IP"
   },
   {
     "id": 16,
     "module": "daemon",
     "item": "port",
-    "item_value": "48782",
+    "item_value": "18090",
     "item_type": "int",
-    "Item_desc": "Lethean Daemon RPC Port"
+    "Item_desc": "QRL Daemon RPC Port"
   },
   {
     "id": 17,
@@ -125,15 +125,15 @@
     "item": "address",
     "item_value": "127.0.0.1",
     "item_type": "string",
-    "Item_desc": "Lethean Daemon RPC Wallet IP"
+    "Item_desc": "QRL Daemon RPC Wallet IP"
   },
   {
     "id": 18,
     "module": "wallet",
     "item": "port",
-    "item_value": "48783",
+    "item_value": "18090",
     "item_type": "int",
-    "Item_desc": "Lethean Daemon RPC Wallet Port"
+    "Item_desc": "QRL Daemon RPC Wallet Port"
   },
   {
     "id": 21,
@@ -219,25 +219,25 @@
     "id": 32,
     "module": "payout",
     "item": "exchangeMin",
-    "item_value": "25",
+    "item_value": "1",
     "item_type": "float",
-    "Item_desc": "Minimum LTHN balance for payout to exchange/payment ID"
+    "Item_desc": "Minimum QRL balance for payout to exchange/payment ID"
   },
   {
     "id": 33,
     "module": "payout",
     "item": "walletMin",
-    "item_value": "5",
+    "item_value": "20",
     "item_type": "float",
-    "Item_desc": "Minimum LTHN balance for payout to personal wallet"
+    "Item_desc": "Minimum QRL balance for payout to personal wallet"
   },
   {
     "id": 34,
     "module": "payout",
     "item": "devDonation",
-    "item_value": "10",
+    "item_value": "0",
     "item_type": "float",
-    "Item_desc": "Donation to LTHN core development"
+    "Item_desc": "Donation to QRL core development"
   },
   {
     "id": 35,
@@ -251,7 +251,7 @@
     "id": 36,
     "module": "payout",
     "item": "denom",
-    "item_value": ".0001",
+    "item_value": ".000000001",
     "item_type": "float",
     "Item_desc": "Minimum balance that will be paid out to."
   },
@@ -285,7 +285,7 @@
     "item": "feesForTXN",
     "item_value": "10",
     "item_type": "int",
-    "Item_desc": "Amount of LTHN that is left from the fees to pay miner fees."
+    "Item_desc": "Amount of QRL that is left from the fees to pay miner fees."
   },
   {
     "id": 41,
@@ -293,7 +293,7 @@
     "item": "maxTxnValue",
     "item_value": "2500",
     "item_type": "int",
-    "Item_desc": "Maximum amount of LTHN to send in a single transaction"
+    "Item_desc": "Maximum amount of QRL to send in a single transaction"
   },
   {
     "id": 42,
@@ -307,7 +307,7 @@
     "id": 43,
     "module": "general",
     "item": "coinCode",
-    "item_value": "LTHN",
+    "item_value": "QRL",
     "item_type": "string",
     "Item_desc": "Coincode to be loaded up w/ the shapeshift getcoins argument."
   },

@@ -6,7 +6,7 @@
   "api_port": 8001,
   "db_storage_path": "CHANGEME",
   "db_storage_max_size": 24,
-  "coin": "lthn",
+  "coin": "qrl",
   "mysql": {
     "connectionLimit": 20,
     "host": "127.0.0.1",

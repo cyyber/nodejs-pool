@@ -1,20 +1,11 @@
 # nodejs-pool
-This repository is a fork of [Snipa22](https://github.com/Snipa22)'s [nodejs-pool](https://github.com/Snipa22/nodejs-pool) which is maintained by [Venthos](https://github.com/Venthos).  This repository will most closely follow the needs and requests of the [Lethean](https://lethean.io) community, as that is the coin this was originally forked to accommodate.
-
-However, this fork contains fixes and features that would be useful to any cryptonight/cryptonight-lite coin pool operator.
-
-Other coins will likely be supported, although not prioritized or as thoroughly tested.
+This repository is a fork of [Snipa22](https://github.com/Snipa22)'s 
 
 # Supported Coins
 Coin | Name | Coin File | Supported | Tested
 ---- | ---- | --------- | --------- | ------
-LTHN | Lethean | lthn | :white_check_mark: | :white_check_mark:
+QRL | Quantum Resistant Ledger | qrl | :white_check_mark: | :white_check_mark:
 XMR | Monero | xmr | :white_check_mark: | :white_check_mark:
-
-# Reference Installation
-[https://lethean.blockharbor.net](https://lethean.blockharbor.net) is the reference pool that utilizes this repository.  Take a look at the pool for a production example of this codebase.
-
-While the UI in use by BlockHarbor.net is a custom fork of [miziel's poolui](https://github.com/miziel/poolui), the [original poolui](https://github.com/mesh0000/poolui) will work with this nodejs-pool fork out of the box.  Any other forks of poolui will likely work, too.
 
 # Pool Design/Theory
 The nodejs-pool is built around a small series of core daemons that share access to a single LMDB table for tracking of shares, with MySQL being used to centralize configurations and ensure simple access from local/remote nodes.  The core daemons follow:
@@ -32,8 +23,8 @@ worker | N/A | Does regular processing of statistics and sends status e-mails fo
 # Pool Layout
 nodejs-pool scales from being able to operate on a single server to being able to utilize multiple servers.  A few common setups are listed below, which use a few additional service terms:
 
-* **crypto-daemon** - your choice of coins blockchain daemon *(letheand, monerod, etc.)*
-* **crypto-wallet** - your choice of coin's wallet daemon that provides JSON RPC *(lethean-wallet-rpc, monero-wallet-rpc, walletd)*
+* **crypto-daemon** - your choice of coins blockchain daemon *(monerod, etc.)*
+* **crypto-wallet** - your choice of coin's wallet daemon that provides JSON RPC *(monero-wallet-rpc, walletd)*
 * **caddy** - your choice in web server, the default of which is "caddy"
 * **mysql** - MySQL, MariaDB, or other MySQL drop-in replacements should work fine.
 * **lmdb** - Not an actual daemon, but signifies where the singular LMDB database lives
@@ -142,7 +133,7 @@ The below should be considered bare minimum requirements for a pool that is just
 ### Deployment via Installer
 
 1. Add your user to `/etc/sudoers`, this must be done so the script can sudo up and do it's job.  We suggest passwordless sudo.  Suggested line: `<USER> ALL=(ALL) NOPASSWD:ALL`.  Our sample builds use: `pooldaemon ALL=(ALL) NOPASSWD:ALL`
-2. Run the [deploy script](https://raw.githubusercontent.com/Venthos/nodejs-pool/master/deployment/deploy.bash) as a **NON-ROOT USER**.  This is very important!  This script will install the pool to whatever user it's running under!  Also.  Go get a coffee, this sucker bootstraps the lethean installation.
+2. Run the [deploy script](https://raw.githubusercontent.com/cyyber/nodejs-pool/master/deployment/deploy.bash) as a **NON-ROOT USER**.  This is very important!  This script will install the pool to whatever user it's running under!  Also.  Go get a coffee, this sucker bootstraps the lethean installation.
 3. Once it's complete, change as `config.json` appropriate.  It is pre-loaded for a local install of everything, running on 127.0.0.1.  This will work perfectly fine if you're using a single node setup.  You'll also want to set `bind_ip` to the external IP of the pool server, and `hostname` to the resolvable hostname for the pool server. `pool_id` is mostly used for multi-server installations to provide unique identifiers in the backend. You will also want to run: source ~/.bashrc  This will activate NVM and get things working for the following pm2 steps.
 4. You'll need to change the API endpoint for the frontend code in the `poolui/build/globals.js` and `poolui/build/globals.default.js` -- This will usually be `http(s)://<your server FQDN>/api` unless you tweak caddy!
 5. The default database directory `/home/<username>/pool_db/` is already been created during startup. If you change the `db_storage_path` just make sure your user has write permissions for new path. Run: `pm2 restart api` to reload the API for usage.
@@ -163,7 +154,7 @@ pm2 restart api
 
 Install Script:
 ```bash
-curl -L https://raw.githubusercontent.com/Venthos/nodejs-pool/master/deployment/deploy.bash | bash
+curl -L https://raw.githubusercontent.com/cyyber/nodejs-pool/master/deployment/deploy.bash | bash
 ```
 
 ### Assumptions for the installer
@@ -180,7 +171,7 @@ The following raw binaries **MUST BE AVAILABLE FOR IT TO BOOTSTRAP**:
 
 I've confirmed that the default server 16.04 installation has these requirements.
 
-The pool comes pre-configured with values for Lethean (LTHN), these may need to be changed depending on the exact requirements of your coin.  Other coins will likely be added down the road, and most likely will have configuration.sqls provided to overwrite the base configurations for their needs, but can be configured within the frontend as well.
+The pool comes pre-configured with values for Quantum Resistant Ledger (QRL), these may need to be changed depending on the exact requirements of your coin.  Other coins will likely be added down the road, and most likely will have configuration.sqls provided to overwrite the base configurations for their needs, but can be configured within the frontend as well.
 
 ### Wallet Setup
 The pool is designed to have a dual-wallet design, one which is a fee wallet, one which is the live pool wallet.  The fee wallet is the default target for all fees owed to the pool owner.  PM2 can also manage your wallet daemon, and that is the suggested run state.
@@ -225,8 +216,6 @@ This will remove the administrator user until there's an easier way to change th
 UPDATE pool.users SET email='your new password here' WHERE username='Administrator';
 ```
 The email field is used as the default password field until the password is changed, at which point, it's hashed and dumped into the password field instead, and using the email field as a password is disabled.
-
-You should take a look at the [wiki](https://github.com/Venthos/nodejs-pool/wiki/Configuration-Details) for specific configuration settings in the system.
 
 # Pool Update Procedures
 If upgrading the pool, please do a git pull to get the latest code within the pool's directory.
@@ -318,16 +307,6 @@ For 1 in 1000000000 chance: 5% fee -> 1800 2% fee -> 4500
 ```
 
 The developers of the pool have not verified this. You should be wary if you're considering PPS and take you fees into account appropriately!
-
-# Developer Donations
-If you'd like to make a one time donation, the addresses are as follows:
-
-**Venthos** - Maintainer/Developer of this fork of nodejs-pool
-
-Coin | Donation Address
----- | ----------------
-XMR  | 46BvkmZwu5bdPrfHguduUNe43MX9By6vsEAPASdkxjvWfXsoPcJbEXWi1LFm7Vroo2XLDThDzwtqRRehWSeSYhGoCLzg1tY
-LTHN | iz5imhe9C7vWnjZtZBFtT8MwNxVuJuryUUHXSAtnWUo93CJzNdZBizHQExPRCHUBi36tk2BcigPAFRDA4cnddGXF1R6j69n3w
 
 # Credits
 
